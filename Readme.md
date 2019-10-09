@@ -25,3 +25,10 @@ $ NODE_ENV=production node app
 | Dropbox | [plugins/dropbox/README.md][PlDb] |
 | GitHub | [plugins/github/README.md][PlGh] |
 
+
+```sh
+Create text ${package.json.version} .
+```
+Create text ${package.json.version}
+
+Create text `${package.json.version}` 

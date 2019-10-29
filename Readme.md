@@ -9,7 +9,7 @@ Video Github [GIT](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd
 Clone
 
 ```sh
-git clone
+git clone https://github.com/vasilijus/Javascript-30
 ```
 
 For production environments...

@@ -39,12 +39,12 @@
         // const firstLastNames = inventors.map((inventor) => {
         //     return inventor.first + " " + inventor.last;
         // })
-        const firstLastNames = inventors.map(inventor => `${inventor.first} ${inventor.last}`);
+        const firstLastNames = inventors.map((inventor , index, arr)=> `${inventor.first} ${inventor.last}`);
         // console.table(firstLastNames);
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
-            console.table(inventors);
+            // console.table(inventors);
             // const sortByDate = inventors.sort(function(a , b) {
             //     console.log(a['year'], " ", b['year']);
             //     if( a['year'] > b['year'] ) {
@@ -61,10 +61,41 @@
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live?
-            const yearsAliveAll = inventors.map()
+            const yearsAliveAll = inventors.reduce( function( total, currentVal, currentIndex, arr ) {
+                // console.log("Total: " + total, currentVal,"Current index: " , currentIndex, arr)
+                return total + currentVal['passed'] - currentVal['year'];
+            }, 0); // set the default (total) value : 0
+
     // 5. Sort the inventors by years lived
+            console.table(inventors);
+            const yearsLived = inventors.sort( function(a , b) {
+                const lastGuy = a.passed - a.year;
+                const nextGuy = b.passed - b.year;
+                if (lastGuy > nextGuy) {
+                    return 1;
+                } else {
+                    return -1;
+                }
+            });
+            console.table(yearsLived);
+
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+
+            // const category = document.querySelector('.mw-category');
+            // // Option 1
+            // const links = [...category.querySelectorAll('a')];
+            //     // OR
+            //     // const links = Array.from(category.querySelectorAll('a'));
+
+            // var de = links
+            //     .map( link => link.textContent)
+            //     .filter( streetName => streetName.includes('de') )
+            // // Option 2
+            // const links2 = category.querySelectorAll('a');
+            // const de2 = links.forEach(link => console.log(link));
+            
+
     // 7. sort Exercise
     // Sort the people alphabetically by last name
     // 8. Reduce Exercise

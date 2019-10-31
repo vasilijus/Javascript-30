@@ -102,17 +102,30 @@
                 const [alast, afirst] = lastRow.split(', ');
                 const [blast, bfirst] = nextRow.split(', ');
                 // console.log(alast, afirst, "/", blast, bfirst);
-                if (alast > blast) {
-                    return 1;
-                } else {
-                    return -1;
-                }
+                // if (alast > blast) {
+                //     return 1;
+                // } else {
+                //     return -1;
+                // }
+                return alast > blast ? 1 : -1;
             });
-            console.log(sortByLastname);
+            // console.log(sortByLastname);
     
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+            console.log(data);
+    const vehicles = data.reduce(( obj, item) => {
+        
+        if(!obj[item]) {
+            obj[item] = 0;
+        }
+        obj[item]++;
+        return obj;
+
+    }, {});
+
+    console.log(vehicles)
   </script>
 </body>
 </html>

@@ -82,26 +82,33 @@
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
-            const category = document.querySelector('.mw-category');
-            // Option 1
-            const links = [...category.querySelectorAll('a')];
-                // OR
-                // const links = Array.from(category.querySelectorAll('a'));
+            // const category = document.querySelector('.mw-category');
+            // // Option 1
+            // const links = [...category.querySelectorAll('a')];
+            //     // OR
+            //     // const links = Array.from(category.querySelectorAll('a'));
 
-            var de = links
-                .map( link => link.textContent)
-                .filter( streetName => streetName.includes('de') )
-            // Option 2
-            const links2 = category.querySelectorAll('a');
-            const de2 = links.forEach(link => console.log(link));
+            // var de = links
+            //     .map( link => link.textContent)
+            //     .filter( streetName => streetName.includes('de') )
+            // // Option 2
+            // const links2 = category.querySelectorAll('a');
+            // const de2 = links.forEach(link => console.log(link));
             
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
-            const sortByLastname = inventors.sort( (lastRow, nextRow) => {
-                const [last, first] = lastRow.split(', ');
-                console.log(last, first);
+            const sortByLastname = people.sort( (lastRow, nextRow) => {
+                const [alast, afirst] = lastRow.split(', ');
+                const [blast, bfirst] = nextRow.split(', ');
+                // console.log(alast, afirst, "/", blast, bfirst);
+                if (alast > blast) {
+                    return 1;
+                } else {
+                    return -1;
+                }
             });
+            console.log(sortByLastname);
     
     // 8. Reduce Exercise
     // Sum up the instances of each of these

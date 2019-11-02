@@ -24,6 +24,7 @@ $ NODE_ENV=production node app
 | ------ | ------ |
 | Dropbox | [plugins/dropbox/README.md][PlDb] |
 | GitHub | [plugins/github/README.md][PlGh] |
+| Day 1 | [Day 1 - Drums, data-attr/index.html][asd]|
 
 
 ```sh

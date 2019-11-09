@@ -3,10 +3,12 @@ var ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height= (window.innerHeight - 50);
 
+
 ctx.strokeStyle = '#BADA55';
 ctx.lineJoin = 'round';
 ctx.lineCap = 'round';
 ctx.lineWidth = '20';
+// ctx.globalCompositeOperation = 'multiply'; // Overlap colors
 
 
 let isDrawing = false ;
@@ -16,7 +18,7 @@ let hue = 0;
 let direction = true;
 
 function draw(e) {
-    if(!isDrawing) return;
+    if(!isDrawing) return; // Stop Drawing
 // console.log(e)
     ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
     ctx.beginPath();

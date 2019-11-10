@@ -33,11 +33,30 @@
     console.error('Error mate');
 
     // Info
-    console.info('Informatio pal');
+    console.info('Informatio pal , Below is Assertion test');
+
     // Testing
+    console.assert( 1 === 1, 'Thats is wrong');
+    let p = document.querySelector('p');
+    console.assert(p.classList.contains('header'), ' This is a paragraph');
+
     // clearing
+    console.clear();
+
     // Viewing DOM Elements
+    console.log(p) //
+    console.dir(p)
+
     // Grouping together
+    // array.forEach(function(currentValue, index, arr), thisValue)
+    dogs.forEach((dog,index) => {
+        // console.group(`${dog.name}`); // will be opened
+        console.groupCollapsed(`${index}: ${dog.name}`);
+        console.log(`This is ${dog.name}`);
+        console.log(`${dog.name} is ${dog.age}. That is ${dog.age * 7} dog years.`);
+        console.groupEnd(`${index}: ${dog.name}`);
+    })
+
     // counting
     // timing
   </script>

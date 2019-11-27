@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Hold Shift to Check Multiple Checkboxes</title>
-  <link type="text/stylesheet" ref="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
 
@@ -53,7 +53,32 @@
   
 <script>
 
+const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]');
 
+let lastChecked;
+
+function handleChecked(e) {
+  // check if SHIFT key down
+  // AND check that they are chcking it
+  let inBetween = false;
+  if( e.shiftKey && this.checked ) {
+    checkboxes.forEach( (checkbox) => {
+      console.log(checkbox);
+      if ( checkbox === this || checkbox === lastChecked ) {
+        inBetween = !inBetween;
+        console.log('starting to check inbetween')
+      }
+      if ( inBetween ) {
+        checkbox.checked = true;
+      }
+    });
+  }
+
+  // console.log(e);
+  lastChecked = this;
+}
+
+checkboxes.forEach( (checkbox) => checkbox.addEventListener('click', handleChecked ));
 
 </script>
 </body>

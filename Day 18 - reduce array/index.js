@@ -19,3 +19,5 @@ const minuts = Math.floor(secondsLeft / 60);
 secondsLeft = secondsLeft % 60;
 
 console.log(hours, minuts, secondsLeft)
+
+document.querySelector('#time').innerHTML = `${hours} : ${minuts} : ${secondsLeft}`;

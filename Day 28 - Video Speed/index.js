@@ -14,3 +14,5 @@ speed.addEventListener('mousemove', function(e) {
     video.playbackRate = playbackRate
     // console.log(percent);
 })
+
+/* look for events  */

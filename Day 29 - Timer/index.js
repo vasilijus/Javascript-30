@@ -10,7 +10,7 @@ function timer(seconds) {
     var now =  Date.now();
 
     var then = now + seconds * 1000;
-    console.log(now, then)
+    // console.log(now, then)
     displayTimeLeft(seconds) // otherwie the code will start from -1 second
     displayEndTime(then);
 
@@ -57,7 +57,7 @@ document.customForm.addEventListener('submit', function(e) {
     e.preventDefault();
     var mins = this.minutes.value;
     timer(mins * 60);
-    console.log(mins)
+    // console.log(mins)
     this.reset();
 })
 
